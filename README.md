@@ -29,6 +29,26 @@
 <br />
 
 
+## **INTRODUCTION**
+
+Kraken2 is widely used in metagenomics for rapid taxonomic classification of sequencing reads. However, because it assigns reads to the lowest common ancestor (LCA) when k-mers match multiple taxa, Kraken2 often overestimates higher-level groups (e.g., genus or family) and underestimates species-level abundances. This misestimation can skew biological interpretations, especially when comparing closely related taxa.
+
+Bracken (Bayesian Reestimation of Abundance after Classification with Kraken) addresses this issue by re-estimating read abundances based on the distribution of k-mers across genomes in your reference database. In practice, Bracken takes the raw Kraken2 classifications and applies a statistical model to refine species- and genus-level abundance estimates, making them more accurate and biologically meaningful.
+
+This tutorial walks you through building a Bracken database from your customised Kraken2 database, enabling you to:
+
+- Correct Kraken2’s raw abundance misestimations
+
+- Generate refined counts at species, genus, or higher levels
+
+- Improve the reliability of ecological and comparative analyses
+
+By the end, you’ll be able to integrate Bracken into your metagenomic workflow for more accurate taxonomic profiling.
+
+
+<br />
+
+
 ## **STEP 1: BUILD THE KRAKEN2 DATABASE**
 
 
